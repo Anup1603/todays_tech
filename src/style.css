@@ -21,6 +21,7 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  height: 80vh;
 }
 
 .header {
@@ -85,6 +86,33 @@ body {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
+}
+
+.loader {
+  margin: auto;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #744ef0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 /* TODO: ELEMENTS */
@@ -153,6 +181,11 @@ ul {
   list-style: none;
 }
 
+#fact-lists {
+  height: 75vh;
+  overflow: scroll;
+}
+
 .vote-buttons {
   margin-left: auto;
   flex-shrink: 0;
@@ -173,7 +206,8 @@ ul {
   cursor: pointer;
 }
 
-.vote-buttons button:hover {
+.vote-buttons button:hover,
+.vote-buttons button:disabled {
   background-color: #292524;
 }
 
